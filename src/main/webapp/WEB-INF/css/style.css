@@ -1,0 +1,208 @@
+@charset "ISO-8859-1";
+
+* {
+	margin: 0px;
+	padding: 0px;
+    box-sizing: border-box;
+}
+
+
+
+html { 
+    height:100%;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+    background-color: RGB(225,225,225);
+    min-height:100%;
+}
+
+header{	
+	width: 100%;	
+	height: 48px;
+	position:fixed;		
+	overflow:hidden;
+	white-space: nowrap;
+	padding: 8px 8px;
+	color: RGB(255,255,255);
+	background-color: RGB(51,51,51);
+	font-family: sans-serif;	
+	box-shadow: 0px 5px 10px RGB(102,102,102);
+	border-top: 1px solid rgb(0,0,0);		
+	z-index: 2;
+}
+header li{
+	list-style-type: none;	
+	height:48px;	
+	float:right;	
+	margin-bottom:50px;
+}
+header li.login{	
+	padding: 5px 8px;		
+}
+header li.login:hover{ 
+	
+	color: rgb(255,0,0);	
+}
+header li.separator{	
+	color: #33FF00;
+	text-shadow: 0px 0px 8px RGB(255,255,255);	
+	font-size: 1.5em;
+}
+header li.logo{	
+	float: left;
+	height:32px;		
+	margin-left:0.5em;
+	font-size: 1.5em;
+	font-weight: bold;	
+	padding: 0px 2px;
+	border:1px solid white;
+	background-color:#0000FF;	
+	text-shadow: 0px 0px 0px white;
+}
+
+header li.appname, header li.appnamefull{	
+	float: left;
+	height:32px;		
+	font-size: 1.5em;
+	font-weight: bold;	
+	text-shadow: 0px 0px 3px white;
+}
+
+
+header li.art{	
+	float: left;	
+	background-image: url('/images/carpark-logo.gif');	
+	height: 32px;
+	width: 64px;	
+	background-size: contain;		
+}
+
+
+/*SIDE NAV MENU*/
+nav{
+	position: fixed;
+	top: 48px;
+	width: 200px;
+	height:100%;
+	background-color: rgb(153,153,153);
+	box-shadow: 3px 0px 5px RGB(51,51,51);
+	z-index: 1;
+}
+nav ul {			
+	list-style-type:none;	
+}
+nav ul li:first-child{
+	margin-top:10px;
+}
+nav ul li a{
+	display: block;
+	font-family: sans-serif;
+	font-weight: bold;
+	color: rgb(255,255,255);
+	padding: 16px 32px 16px 16px;
+	text-shadow: 0px 0px 2px rgb(0,0,0);	
+	text-decoration: none;
+}
+nav ul li a.disabled{
+	color: rgb(102,102,102);
+	text-shadow: none;
+	pointer-events: none;
+}
+nav ul li a.active{
+	background-color: #0000FF;
+    color: rgb(255,255,255);
+    text-shadow: none;
+}
+nav ul li a:hover:not(.active):not(.disabled){
+	background-color: rgb(204,204,204);
+    color: rgb(0,0,255);  
+    text-shadow: none;  
+}
+
+#pagecontent{	
+	width: 100%;
+	height: 1000px;
+	padding-left: 200px;
+	padding-top: 52px;			
+}
+
+/*FOOTER*/
+footer{	
+	position:fixed;
+	width: 100%;
+	height: 32px;
+	bottom:0%;
+	padding:5px;	
+	color: rgb(255,255,255);
+	background-color: rgb(51,51,51);
+	border-top: 1px solid rgb(0,0,0);
+	text-align: right;	
+	z-index: 2;
+}
+.menulink{
+	font-family: sans-serif;
+	float:left;
+	text-decoration: none;
+}
+.menulink:link, .menulink:visited{
+	color: rgb(255,255,255);
+}
+.menulink:hover, .menulink:active{
+	color: rgb(255,204,0);
+	cursor: pointer;
+}
+
+footer div.copyright{
+	float:right;	
+}
+
+.nonselectable
+	{
+	-webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+    user-drag: none; 
+    -webkit-user-drag: none;
+	}
+
+@media screen and (max-width: 600px) {
+	header{
+		box-shadow: none;
+		position:static;
+	}
+	header li.appnamefull{
+    	display:none;
+  	}  	
+	header li.art{	
+		width: 32px;		
+	}	
+	nav {
+		position:static;
+		float:none;
+		width: 100%;
+		height:auto;	
+		box-shadow: 0px 3px 5px RGB(51,51,51);	
+	}
+	nav a{
+		text-align: center;
+		border-bottom: 1px solid rgb(102,102,102);
+	}
+	nav ul li:first-child{
+	margin-top:0px;
+	}	
+	nav ul li a.disabled
+	{
+		display: none;
+	}	
+	
+	#pagecontent{		
+		padding-left:0px;
+		padding-top:0px;
+	}
+}
+
+
